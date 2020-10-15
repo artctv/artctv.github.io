@@ -10,6 +10,10 @@ BUILDDIR      = ../../artctv-docs
 PDFBUILDDIR   = /tmp
 PDF           = ../manual.pdf
 
+PAPEROPT_a4     = -D latex_paper_size=a4
+PAPEROPT_letter = -D latex_paper_size=letter
+ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
@@ -22,11 +26,11 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 latexpdf:
-    $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(PDFBUILDDIR)/latex
-    #                                          ^^^
-    @echo "Running LaTeX files through pdflatex..."
-    make -C $(PDFBUILDDIR)/latex all-pdf
-    #         ^^^
-    cp $(PDFBUILDDIR)/latex/*.pdf $(PDF)
-    #^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    @echo "pdflatex finished; see $(PDF)"
+	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(PDFBUILDDIR)/latex
+	#                                          ^^^
+	@echo "Running LaTeX files through pdflatex..."
+	make -C $(PDFBUILDDIR)/latex all-pdf
+	#         ^^^
+	cp $(PDFBUILDDIR)/latex/*.pdf $(PDF)
+	#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	@echo "pdflatex finished; see $(PDF)"

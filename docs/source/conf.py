@@ -27,7 +27,17 @@ author = 'Artem'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark',]
+extensions = [
+    "recommonmark",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.todo",
+    "sphinx.ext.coverage",
+    "sphinx.ext.ifconfig",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.githubpages",
+    "sphinx_markdown_tables",
+    ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -57,10 +67,29 @@ html_theme = 'alabaster'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_context = {
+    'css_files': {'_static/custom.css'}
+    }
 
 # Configures Sphinx to parse all files with the extensions .md and .txt as Markdown and .rst as restructuredtext:
+# import recommonmark
+# from recommonmark.transform import AutoStructify
+# from recommonmark.parser import CommonMarkParser
+# source_parsers = {
+#    '.md': CommonMarkParser
+# }
+
 source_suffix = {
     '.rst': 'restructuredtext',
     '.txt': 'markdown',
     '.md': 'markdown',
 }
+
+# def setup(app):
+#     app.add_config_value('recommonmark_config', {
+#             'enable_math': True,
+#             'enable_eval_rst': True,
+#             'enable_auto_doc_ref': True,
+#             'auto_code_block': True,
+#             }, True)
+#     app.add_transform(AutoStructify)
