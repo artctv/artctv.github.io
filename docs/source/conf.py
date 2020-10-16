@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'artctv'
-copyright = 'Copyright (c) 2020 by Artem `artctv` Kholodilov. All Rights Reserved.'
+copyright = 'Copyright (c) 2020 by Artem `artctv` Kholodilov. All Rights Reserved'
 author = 'Artem'
 
 
