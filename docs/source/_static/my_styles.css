@@ -1,0 +1,12 @@
+p {
+   font-size: 16px;
+}
+
+p:not([class]) {
+   font-size: 18px;
+}
+
+.p-align-right {
+   text-align: right;
+   font-size: 14px;
+}
