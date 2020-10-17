@@ -1,0 +1,9 @@
+Статьи
+======
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Список всех моих материалов:
+  :glob:
+
+  1_sphinx/*
